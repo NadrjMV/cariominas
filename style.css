@@ -307,10 +307,20 @@ main.container > section {
 }
 
 /* --- FOOTER --- */
-#footer {
-    padding: 3rem 0;
-    border-top: 1px solid var(--glass-border);
-    margin-top: 2rem;
+#footer { text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--glass-border); margin-top: 2rem; }
+.dev-credit-link {
+    color: var(--text-light);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.dev-credit-link:hover {
+    color: var(--accent-blue);
+}
+.verified-badge {
+    color: var(--azul-verificado);
+    font-size: 0.9em;
+    margin-left: 4px;
 }
 .footer-top {
     display: flex;
