@@ -405,3 +405,232 @@ main.container > section {
         text-align: center;
     }
 }
+
+#patrocinadores {
+    text-align: center;
+}
+
+.patrocinadores-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03); /* Fundo sutil para agrupar as logos */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+.patrocinadores-grid img {
+    max-height: 70px; /* Ajusta a altura máxima das logos */
+    width: auto;
+    filter: brightness(1.5);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.patrocinadores-grid img:hover {
+    filter: none; /* Remove o filtro ao passar o mouse */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.incentivo-fiscal-card {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(145deg, rgba(0, 150, 64, 0.1), rgba(12, 26, 20, 0.2));
+}
+
+.incentivo-fiscal-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.incentivo-fiscal-card p {
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.btn-incentivo {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background: linear-gradient(45deg, var(--verde-cariominas), #00b34d);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 150, 64, 0.3);
+}
+
+.btn-incentivo:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 150, 64, 0.4);
+    filter: brightness(1.1);
+}
+
+/* --- ESTILOS DO MODAL DE INCENTIVO --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 26, 20, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    /* Começa escondido */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Estado visível do modal */
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh; /* Para não ocupar a tela inteira em altura */
+    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    transform: scale(0.95);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-light);
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    background: var(--vermelho-cariominas);
+    transform: rotate(90deg);
+}
+
+/* Estilos para o conteúdo dentro do modal */
+.modal-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: var(--verde-cariominas);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content p, .modal-content li {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.modal-content ul {
+    list-style-position: inside;
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+}
+
+.modal-content li {
+    margin-bottom: 0.75rem;
+}
+
+.btn-modal-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Evita o scroll da página principal quando o modal está aberto */
+body.modal-active {
+    overflow: hidden;
+}
+
+
+/* --- AJUSTES NO FOOTER --- */
+/* Remova ou substitua as regras antigas de #footer, .footer-top e .footer-bottom por estas: */
+
+#footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Espaçamento entre logo, links e texto */
+}
+
+#footer {
+    padding: 3rem 0; /* Aumenta o espaçamento vertical */
+    margin-top: 4rem;
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.footer-top {
+    /* Não precisa mais de flex, margin ou padding aqui */
+    margin-bottom: 0; /* Zera margem antiga */
+    padding-top: 0;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Coloca os textos um sobre o outro */
+    gap: 1rem;
+    border-top: none; /* Remove a borda interna que não é mais necessária */
+    padding-top: 0;
+    width: 100%;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Ajuste no link do desenvolvedor */
+.dev-credit a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: var(--text-muted); /* Cor base para o texto "Desenvolvido por" */
+}
+
+.dev-credit a strong {
+    font-weight: 700;
+    color: var(--text-light); /* Deixa o @jordanlvs em branco e negrito */
+}
+
+.dev-credit a:hover strong {
+    color: var(--verde-cariominas); /* Efeito opcional ao passar o mouse */
+}
