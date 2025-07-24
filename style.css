@@ -1,4 +1,3 @@
-/* --- RESET E VARIÁVEIS GLOBAIS (Design Cariominas F.C.) --- */
 :root {
     --dark-bg: #0c1a14; /* Fundo verde bem escuro, quase preto */
     --glass-bg: rgba(28, 30, 48, 0.5);
@@ -85,7 +84,6 @@ body {
     padding: 0 1.5rem;
 }
 
-/* CORREÇÃO: Garante o espaçamento entre todas as seções */
 main.container > section {
     margin-bottom: 5rem;
 }
@@ -284,7 +282,6 @@ main.container > section {
     font-weight: 500;
 }
 
-/* --- CONTATO / INSCRIÇÕES --- */
 .contato-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -306,7 +303,6 @@ main.container > section {
     object-fit: cover;
 }
 
-/* --- FOOTER --- */
 #footer { text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--glass-border); margin-top: 2rem; }
 .dev-credit-link {
     color: var(--text-light);
@@ -361,7 +357,6 @@ main.container > section {
     margin-left: 4px;
 }
 
-/* --- ANIMAÇÕES --- */
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -372,7 +367,6 @@ main.container > section {
     transform: translateY(0);
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 992px) {
     .hero, .contato-wrapper {
         grid-template-columns: 1fr;
@@ -415,27 +409,45 @@ main.container > section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 4rem;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03); /* Fundo sutil para agrupar as logos */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03); 
     border: 1px solid var(--glass-border);
     border-radius: 16px;
 }
 
-.patrocinadores-grid img {
-    max-height: 70px; /* Ajusta a altura máxima das logos */
+.apoiador-logo {
+    width: 220px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.apoiador-logo:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.apoiador-logo img {
+    max-width: 100%;  
+    max-height: 100%; 
     width: auto;
-    filter: brightness(1.5);
+    height: auto;
+    filter: brightness(1.5) grayscale(30%); 
     opacity: 0.7;
     transition: all 0.3s ease;
 }
 
-.patrocinadores-grid img:hover {
-    filter: none; /* Remove o filtro ao passar o mouse */
+.apoiador-logo img:hover {
+    filter: none; 
     opacity: 1;
     transform: scale(1.1);
 }
+
 
 .incentivo-fiscal-card {
     text-align: center;
@@ -477,7 +489,6 @@ main.container > section {
     filter: brightness(1.1);
 }
 
-/* --- ESTILOS DO MODAL DE INCENTIVO --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -493,13 +504,11 @@ main.container > section {
     justify-content: center;
     padding: 1rem;
 
-    /* Começa escondido */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-/* Estado visível do modal */
 .modal-overlay.visible {
     opacity: 1;
     visibility: visible;
@@ -509,8 +518,8 @@ main.container > section {
     position: relative;
     max-width: 700px;
     width: 100%;
-    max-height: 90vh; /* Para não ocupar a tela inteira em altura */
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for muito grande */
+    max-height: 90vh;
+    overflow-y: auto; 
     transform: scale(0.95);
     transition: transform 0.4s ease;
 }
@@ -541,7 +550,6 @@ main.container > section {
     transform: rotate(90deg);
 }
 
-/* Estilos para o conteúdo dentro do modal */
 .modal-content h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
@@ -579,40 +587,34 @@ main.container > section {
     font-size: 1.1rem;
 }
 
-/* Evita o scroll da página principal quando o modal está aberto */
 body.modal-active {
     overflow: hidden;
 }
-
-
-/* --- AJUSTES NO FOOTER --- */
-/* Remova ou substitua as regras antigas de #footer, .footer-top e .footer-bottom por estas: */
 
 #footer .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem; /* Espaçamento entre logo, links e texto */
+    gap: 2rem; 
 }
 
 #footer {
-    padding: 3rem 0; /* Aumenta o espaçamento vertical */
+    padding: 3rem 0; 
     margin-top: 4rem;
     border-top: 1px solid var(--glass-border);
     text-align: center;
 }
 
 .footer-top {
-    /* Não precisa mais de flex, margin ou padding aqui */
-    margin-bottom: 0; /* Zera margem antiga */
+    margin-bottom: 0; 
     padding-top: 0;
 }
 
 .footer-bottom {
     display: flex;
-    flex-direction: column; /* Coloca os textos um sobre o outro */
+    flex-direction: column;
     gap: 1rem;
-    border-top: none; /* Remove a borda interna que não é mais necessária */
+    border-top: none;
     padding-top: 0;
     width: 100%;
     align-items: center;
@@ -620,17 +622,16 @@ body.modal-active {
     font-size: 0.9rem;
 }
 
-/* Ajuste no link do desenvolvedor */
 .dev-credit a {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: var(--text-muted); /* Cor base para o texto "Desenvolvido por" */
+    text-decoration: none;
+    color: var(--text-muted);
 }
 
 .dev-credit a strong {
     font-weight: 700;
-    color: var(--text-light); /* Deixa o @jordanlvs em branco e negrito */
+    color: var(--text-light);
 }
 
 .dev-credit a:hover strong {
-    color: var(--verde-cariominas); /* Efeito opcional ao passar o mouse */
+    color: var(--verde-cariominas);
 }
